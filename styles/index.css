@@ -17,6 +17,10 @@
 /* PAGES */
 @import './pages/home.css';
 
-.home {
+body {
     background-image: url(../assets/home/background-home-desktop.jpg);
 }
+
+/* .home {
+    background-image: url(../assets/home/background-home-desktop.jpg);
+} */
