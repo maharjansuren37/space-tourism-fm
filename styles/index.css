@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Bellefair&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&display=swap');
+
+/* BASE */
+@import './base/variables.css';
+@import './base/reset.css';
+@import './base/typography.css';
+@import './base/utilities.css';
+
+/* COMPONENTS */
+@import './components/button.css';
+
+/* NAVIGATION */
+@import './layout/navigation.css';
+
+/* PAGES */
+@import './pages/home.css';
+
+.home {
+    background-image: url(../assets/home/background-home-desktop.jpg);
+}

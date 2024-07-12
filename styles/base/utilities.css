@@ -1,0 +1,82 @@
+/* utilities */
+.container {
+    padding-inline: 2em;
+    margin-inline: auto;
+    max-width: 80rem;
+}
+
+.grid-container {
+    display: grid;
+    text-align: center;
+    place-items: center;
+    padding-inline: 1rem;
+}
+
+.grid-container * {
+    max-width: 45ch;
+}
+
+@media(min-width: 45rem){
+    .grid-container {
+        column-gap: var(--container-gap, 2rem);
+        grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 40rem)) minmax(2rem, 1fr);
+        text-align: left;
+    }
+    .grid-container > *:first-child {
+        grid-column: 2;
+    }
+    
+    .grid-container > *:last-child {
+        grid-column: 3;
+    }
+
+    .grid-container--home {
+        padding-bottom: max(6rem, 20vh);
+        align-items: end;
+    }
+}
+
+.flex {
+    display: flex;
+    gap: var(--gap, 1rem);
+}
+
+.grid {
+    display: grid;
+    gap: var(--gap, 1rem);
+}
+
+.d-block {
+    display: block;
+}
+
+/* .flow > *:where(:not(:first-child)) {
+    margin-top: 1rem;
+    outline: 1px solid red
+} */
+
+/* + means adjacent element or before siblings */
+.flow > * + * {
+    margin-top: var(--flow-space, 1rem);
+}
+
+/* colors */
+.bg-dark {
+    background-color: hsl(var(--clr-dark) / .2);
+}
+.bg-accent {
+    background-color: hsl(var(--clr-light));
+}
+.bg-white {
+    background-color: hsl(var(--clr-white));
+}
+
+.text-dark {
+    color: hsl(var(--clr-dark));
+}
+.text-accent {
+    color: hsl(var(--clr-light));
+}
+.text-white {
+    color: hsl(var(--clr-white));
+}

@@ -1,0 +1,104 @@
+/* use a more-intuitive box-sizing model.*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* remove default margin and padding */
+* {
+    margin: 0;
+    padding: 0; /*added by myself*/
+    font: inherit;
+}
+
+/* remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+/* set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+/* allow percentage-based heights in the application */
+html, body {
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+  }
+
+/* typographic tweaks 1.accessible line-height 2.improve text rendering */
+body {
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased; /* only works on maxOS */
+    -webkit-font-osx-font-smoothing: antialiased;
+}
+
+/* improve media defaults */
+img, 
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* make form elements easier to work with */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+     scroll-behavior: auto;
+    }
+    
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+/* general styling */
+body {
+    background: hsl(var(--clr-dark));
+    color: hsl(var(--clr-white));
+    font-size: var(--fs-400);
+    font-family: var(--ff-sans-normal);
+    min-height: 100vh;
+
+    /* display: grid;
+    grid-template-rows: min-content 1fr; */
+}
+
+/* sr only */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 3;
+    margin: -1px;
+    overflow: hidden;
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px) ; /* 1 */
+	-webkit-clip-path: inset(50%);
+	clip-path: inset(50%);  /* 2 */
+	white-space: nowrap;            /* 3 */
+}
